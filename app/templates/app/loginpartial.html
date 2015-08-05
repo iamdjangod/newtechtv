@@ -1,0 +1,15 @@
+{% if user.is_authenticated %}
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="{% url 'youtube_upload' %}"><button type="button" class="btn btn-info btn-xs">Submit Video</button></a></li>
+        <li><a href="{% url 'auth_password_change' %}"><button type="button" class="btn btn-warning btn-xs">Change Password</button></a></li>
+        <li><a href="{% url 'auth_logout' %}?next=/"><button type="button" class="btn btn-danger btn-xs">Log Out</button></a></li>
+    </ul>
+
+{% else %}
+
+<ul class="nav navbar-nav navbar-right">
+    <li><a href="{% url 'auth_login' %}">Log in</a></li>
+    <li><a href="{% url 'registration_register' %}">Sign Up</a></li>
+</ul>
+
+{% endif %}
